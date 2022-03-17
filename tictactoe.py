@@ -6,14 +6,15 @@ from pygame.locals import *
 pygame.init()
 
 #game window
-screen_width = 300
 screen_height = 300
+screen_width = 300
+line_width = 6
 
 screen = pygame.display.set_mode((screen_width, screen_height))
 pygame.display.set_caption('TicTacToe')
 
 #defining variables
-line_width = 6
+
 markers = []
 
 
@@ -23,8 +24,8 @@ def draw_grid():
     grid = (50, 50, 50)
     screen.fill(bg)
     for x in range(1,3):
-        pygame.draw.line(screen, grid, (0, x * 100), (screen_width, x * 100), line_width)
-        pygame.draw.line(screen, grid, (x * 100, 0), (x * 100, screen_height), line_width)
+            pygame.draw.line(screen, grid, (0, x * 100), (screen_width, x * 100), line_width)
+            pygame.draw.line(screen, grid, (x * 100, 0), (x * 100, screen_height), line_width)
 
 
 for x in range(3):
@@ -41,6 +42,6 @@ while run:
             if event.type == pygame.QUIT:
                 run = False
 
-pygame.display.update()
+    pygame.display.update()
 
 pygame.quit()
